@@ -8,3 +8,14 @@ echo $RANDOM_NUMBER
 COUNT=1
 echo "Make your first guess: "
 read NUMBER_GUESSED
+
+#If the guess is incorrect, enter the guessing loop, where with each guess, guesses count increases
+while [[ "$NUMBER_GUESSED" != "$RANDOM_NUMBER" ]]; do
+	echo "Your guess was incorrect. Try Again!"
+	COUNT=$((COUNT + 1))
+	read NUMBER_GUESSED
+	#check the number again
+done
+
+#When the number is guessed, print out the score
+echo "Congratulations! You guessed the correct number at $COUNT guesses"
